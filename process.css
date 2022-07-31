@@ -1,0 +1,258 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: contain; /*keeps images proportional*/
+}
+
+html {
+  --green: #b2bc80;
+  --gray-light: #449384;
+  --light-green: rgba(178, 188, 128, 50%);
+  --yellow: #ffcc33;
+  --blue: #232e78;
+  --font-sans-serif: "Enriqueta", serif;
+  --font-header: "Helvetica", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans-serif);
+  font-size: medium;
+  color: black;
+  line-height: 1.5;
+  background-color: rgba(178, 188, 128, 50%);
+  background-image: url("img/arrows-09-09-09.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.header-image {
+  padding: 0;
+  background-size: cover;
+}
+
+h1, h2 {
+  font-family: var(--font-header);
+  color: var(--blue);
+  font-size: xx-large;
+  margin: 0;
+}
+
+h3{
+  font-family: var(--font-sans-serif);
+}
+
+a {
+  /* color: white; */
+}
+
+ul {
+    list-style-image: url('img/white-arrow-ul.png');
+  }
+
+.caption {
+text-align: center;
+font-size: x;
+caption-side: top;
+/*why isn't any of this working?*/
+}
+
+blockquote {
+    font-family: var(--font-header);
+    font-weight: 100;
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: xx-large;
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+  }
+
+  .quote-author {
+    font-size: small;
+    padding: 
+  }
+
+
+/*resizing flexed images and gifs*/
+.resize {
+  width: 330px;
+  height: auto;
+  padding: 1rem;
+}
+
+.resize-medium {
+    width: 480px;
+    height: auto;
+    padding: 1rem;
+  }
+
+.container {
+  flex-wrap: wrap;
+  /* max-width: 75rem; */
+  margin: auto;
+  padding: 0 1rem;
+  border: 3px solid red;
+}
+
+/*line break border*/
+hr {
+    border-top: 3px dotted var(--green);
+}
+
+/*header*/
+
+  .header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /*name in header*/
+  .header--title {
+
+
+  }
+
+  /*horizontal menu*/
+  .menu{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu a{
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  /*add something that shows which menu item is selected here*/
+
+/*Hook*/
+  .header-text {
+    font-size: 5rem;
+  }
+
+  .block {
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+  }
+
+  /* .block-text .block-subhead {
+    flex: 1;
+  } */
+
+.block-text {
+    padding-right: 5rem;
+  }
+
+  .block-image { /*why can't I get this wrap?*/
+    padding: 2rem;
+  }
+
+  .block-image-resize {
+    width: 500px;
+    height: auto;
+  }
+  
+/*Problem Statement*/
+
+.problems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.item {
+  display: flex;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 50px;
+  margin: 20px;
+  border-radius: 15px;
+  /* border: 8px solid var(--blue); */
+}
+
+.item-img {
+  padding: 2rem 2rem 2rem, 0;
+}
+
+.about--title {
+  text-align: center;
+}
+
+/*prototypes*/
+.prototypes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 75rem;
+  margin: auto;
+  padding: 0 1rem;
+  object-fit: contain;
+}
+/*footer*/
+.footer {
+  background: var(--green);
+  color: white;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer--list {
+  margin: 0;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer--list a {
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.arrows {
+    padding: 0 4rem 0 0;
+}
+
+/*card*/
+.card {
+  color: blue;
+  max-width: 300px;
+  height: 500px;
+  background-image: linear-gradient(to bottom right, var(--green), var(--gray-light));
+  border: blue;
+  padding: 20px;
+  margin: 20px;
+}
+
+.card h2{
+  color: red;
+}

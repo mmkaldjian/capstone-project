@@ -7,11 +7,14 @@
 img {
   max-width: 100%;
   display: block;
+  object-fit: contain; /*keeps images proportional*/
 }
 
 html {
   --green: #b2bc80;
   --gray-light: #449384;
+  --light-green: rgba(178, 188, 128, 50%);
+  --yellow: #ffcc33;
   --font-sans-serif: "Enriqueta", serif;
   --font-header: "Helvetica", sans-serif;
 }
@@ -25,15 +28,22 @@ body {
   margin: 0;
 }
 
-.hero-image {
+.header-image {
   padding: 0;
-  background-color: blue;
   background-size: cover;
 }
 
 h1, h2 {
   font-family: var(--font-header);
   color: var(--green);
+}
+
+h3{
+  font-family: var(--font-sans-serif);
+}
+
+h4{
+
 }
 
 h5 {
@@ -43,11 +53,36 @@ h5 {
 }
 
 a {
-  color: white;
+  /* color: white; */
 }
 
+figcaption {
+text-align: center;
+font-size: xx-small;
+caption-side: top;
+}
 
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: xx-large;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
 
+/*resizing flexed images and gifs*/
 .resize {
   width: 350px;
   height: auto;
@@ -60,15 +95,12 @@ a {
   padding: 0 1rem;
 }
 
+/*line break border*/
 hr {
     border-top: 3px dotted var(--green);
 }
 
 /*header*/
-  .header {
-    /*background: var(--green);*/
-
-  }
 
   .header .container {
     display: flex;
@@ -76,66 +108,86 @@ hr {
     justify-content: space-between;
   }
 
+  /*name in header*/
   .header--title {
-    font-size: 1.5rem;
-    margin: 0;
-    color: black;
+
+
   }
 
-  .header--list {
+  /*horizontal menu*/
+  .menu{
     display: flex;
     list-style: none;
     padding: 0;
-    /*text-transform: uppercase; */
     margin: 0;
   }
 
-  .header--list a{
+  .menu a{
     display: inline-block;
     padding: 1rem;
     text-decoration: none;
     color: black;
   }
 
+  /*add something that shows which menu item is selected here*/
+
 /*Hook*/
-  .section-heading {
+  .header-text {
     font-size: 5rem;
-    text-align: center;
   }
 
-  .post--feature {
-    padding: 4em;
+  .block {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 1rem 0;
+    align-items: center;
   }
 
-  .feature--text .feature--title {
+  /* .block-text .block-subhead {
     flex: 1;
-  }
+  } */
 
-.feature--text {
+  .header-block-text {
     padding-right: 5rem;
+    max-width: 500px;
+  } 
+
+.block-text {
+    padding-right: 5rem;
+  } 
+
+  .block-image { /*why can't I get this wrap?*/
+    padding: 2rem;
   }
 
-  .feature--image {
-    flex-shrink: 0; /* I can't figure out how to make images be flexible with the layout; right now it is huge*/
+  .block-image-resize {
+    width: 500px;
+    height: auto;
   }
+  
 /*Problem Statement*/
 
-.about {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2px;
-  padding: 1rem;
+.problems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3rem;
 }
 
 .item {
-  display: grid;
-  background: var(--green);
-  color: white;
-  padding: 5px;
-  justify-items: center;
-  align-items: center;
+  display: flex;
+  background: var(--light-green);
+  background-image: url(img/arrows-09-09-09.png);
+  background-size: 1200px;
+  border-radius: 15px;
+  padding: 50px;
+  margin: 10px;
+}
+
+.item-img {
+  padding: 2rem 2rem 2rem 0;
 }
 
 .about--title {
@@ -147,9 +199,11 @@ hr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   max-width: 75rem;
   margin: auto;
   padding: 0 1rem;
+  object-fit: contain;
 }
 /*footer*/
 .footer {
@@ -180,4 +234,15 @@ hr {
 .bibliography {
   /* background-color: ;
  how to put a transparent box behind it that scrolls?*/
+}
+
+.button-style {
+  background-color:rgba(178, 188, 128);
+  background-image: url(img/button-border.png);
+  width: 300px;
+  height: 50px;
+  background-size: 300px 50px;
+  border-radius: 30px;
+  text-align: center;
+  filter: drop-shadow(8px 8px 5px black);
 }
